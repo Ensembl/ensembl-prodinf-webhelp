@@ -18,8 +18,8 @@ from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-# from ensembl_production.utils import json.dumps, json.loads
-from ensembl_production_db.admin import ProductionUserAdminMixin
+# from ensembl.production.djcore.utils import json.dumps, json.loads
+from ensembl.production.djcore.admin import ProductionUserAdminMixin
 from ensembl_website.models import *
 
 

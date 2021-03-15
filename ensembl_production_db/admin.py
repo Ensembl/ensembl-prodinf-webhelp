@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.contrib import messages
 from django.contrib.admin import SimpleListFilter
 
-from ensembl_production.admin import ProductionUserAdminMixin
+from ensembl.production.djcore.admin import ProductionUserAdminMixin
 from .models import *
 
 

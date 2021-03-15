@@ -3,6 +3,8 @@
 from django.conf import settings
 from django.db import migrations
 import django.db.models.deletion
+
+import ensembl.production.djcore.models
 import ensembl_production.models
 
 
@@ -16,11 +18,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='helprecord',
             name='created_by',
-            field=ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='helprecord_created_by', related_query_name='helprecord_creates', to=settings.AUTH_USER_MODEL),
+            field=ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='helprecord_created_by', related_query_name='helprecord_creates', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AlterField(
             model_name='helprecord',
             name='modified_by',
-            field=ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='helprecord_modified_by', related_query_name='helprecord_updates', to=settings.AUTH_USER_MODEL),
+            field=ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='helprecord_modified_by', related_query_name='helprecord_updates', to=settings.AUTH_USER_MODEL),
         ),
     ]

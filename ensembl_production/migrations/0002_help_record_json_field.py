@@ -13,7 +13,7 @@
 """
 from django.db import migrations
 import json
-from ensembl_production.utils import perl_string_to_python_website, to_internal_value
+from ensembl.production.djcore.forms import perl_string_to_python_website, to_internal_value
 
 
 def transform_json(apps, schema_editor):

@@ -3,6 +3,8 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+
+import ensembl.production.djcore.models
 import ensembl_production.models
 
 
@@ -38,17 +40,17 @@ class Migration(migrations.Migration):
                 ('app_prod_url', models.CharField(max_length=200, unique=True, verbose_name='App Url')),
                 ('app_groups', models.ManyToManyField(blank=True, to='auth.Group', db_constraint=False)),
                 ('created_by',
-                 ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False,
-                                                              null=True, on_delete=django.db.models.deletion.SET_NULL,
-                                                              related_name='productionflaskapp_created_by',
-                                                              related_query_name='productionflaskapp_creates',
-                                                              to=settings.AUTH_USER_MODEL)),
+                 ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False,
+                                                                     null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                                                     related_name='productionflaskapp_created_by',
+                                                                     related_query_name='productionflaskapp_creates',
+                                                                     to=settings.AUTH_USER_MODEL)),
                 ('modified_by',
-                 ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False,
-                                                              null=True, on_delete=django.db.models.deletion.SET_NULL,
-                                                              related_name='productionflaskapp_modified_by',
-                                                              related_query_name='productionflaskapp_updates',
-                                                              to=settings.AUTH_USER_MODEL)),
+                 ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False,
+                                                                     null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                                                     related_name='productionflaskapp_modified_by',
+                                                                     related_query_name='productionflaskapp_updates',
+                                                                     to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Flask App',

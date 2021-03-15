@@ -14,7 +14,7 @@ from django.template.defaultfilters import truncatechars
 from django_mysql.models import EnumField
 from multiselectfield import MultiSelectField
 
-from ensembl_production.models import BaseTimestampedModel, NullTextField
+from ensembl.production.djcore.models import NullTextField, BaseTimestampedModel, HasCurrent, HasDescription
 
 DB_TYPE_CHOICES_BIOTYPE = (('cdna', 'cdna'),
                            ('core', 'core'),
@@ -39,20 +39,6 @@ DB_TYPE_CHOICES_METAKEY = (('cdna', 'cdna'),
                            ('vega', 'vega'),
                            ('presite', 'presite'),
                            ('sangervega', 'sangervega'))
-
-
-class HasCurrent(models.Model):
-    class Meta:
-        abstract = True
-        app_label = 'ensembl_production_db'
-
-    is_current = models.BooleanField(default=True)
-
-
-class HasDescription:
-    @property
-    def short_description(self):
-        return truncatechars(self.description, 150)
 
 
 class WebData(BaseTimestampedModel, HasDescription):

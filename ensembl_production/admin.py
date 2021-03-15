@@ -15,51 +15,14 @@
 import jsonfield
 from django import forms
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 # Unregister the provided model admin
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from fernet_fields import EncryptedCharField
 
+from ensembl.production.djcore.admin import ProductionUserAdminMixin, SuperUserAdmin
 from .models import ProductionFlaskApp, Credentials
-
-
-
-
-class ProductionUserAdminMixin(admin.ModelAdmin):
-    """ Mixin class to assiciated request user to integer ID in another database host
-    Allow cross linking within multiple database
-    Warning: Do not check for foreign key integrity across databases
-    """
-    readonly_fields = ('created_by', 'created_at', 'modified_by', 'modified_at')
-
-    class Media:
-        css = {
-            'all': ('css/production_admin.css',)
-        }
-
-    def save_model(self, request, obj, form, change):
-        if change:
-            if form.changed_data:
-                obj.modified_by = request.user
-        else:
-            obj.created_by = request.user
-        super().save_model(request, obj, form, change)
-
-
-class SuperUserAdmin:
-    def has_add_permission(self, request):
-        return request.user.is_superuser
-
-    def has_change_permission(self, request, obj=None):
-        return request.user.is_superuser
-
-    def has_delete_permission(self, request, obj=None):
-        return request.user.is_superuser
-
-    def has_module_permission(self, request):
-        return request.user.is_superuser
 
 
 @admin.register(ProductionFlaskApp)
@@ -97,25 +60,11 @@ class FlaskAppAdmin(ProductionUserAdminMixin, SuperUserAdmin):
     img_url.allow_tags = True
 
 
+admin.site.unregister(User)
+
+
 @admin.register(Credentials)
 class CredentialsAdmin(admin.ModelAdmin, SuperUserAdmin):
     formfield_overrides = {
         EncryptedCharField: {'widget': forms.widgets.PasswordInput},
     }
-
-
-admin.site.unregister(User)
-
-
-@admin.register(User)
-class CustomUserAdmin(UserAdmin, SuperUserAdmin):
-    actions = ['deactivate_users', ]
-
-    def has_delete_permission(self, request, obj=None):
-        return False
-
-    def deactivate_users(self, request, queryset):
-        cnt = queryset.filter(is_active=True).update(is_active=False)
-        self.message_user(request, 'Deactivated {} users.'.format(cnt))
-
-    deactivate_users.short_description = 'Deactivate Users'

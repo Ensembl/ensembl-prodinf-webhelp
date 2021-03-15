@@ -18,7 +18,7 @@ import re
 from django.db import models
 from jira import JIRA
 
-from ensembl_production.models import Credentials
+from ensembl.production.djcore.models import Credentials
 
 
 def matches_filter(jira_issue, intentions_filter):

@@ -16,7 +16,7 @@ from django.db import models
 from django_mysql.models import EnumField, SizedTextField
 from django import forms
 
-from ensembl_production.models import BaseTimestampedModel
+from ensembl.production.djcore.models import BaseTimestampedModel
 
 """
 faq

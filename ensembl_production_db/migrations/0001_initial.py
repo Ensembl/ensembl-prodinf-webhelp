@@ -4,6 +4,8 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 import django_mysql.models
+
+import ensembl.production.djcore.models
 import ensembl_production.models
 import multiselectfield.db.fields
 
@@ -29,8 +31,8 @@ class Migration(migrations.Migration):
                 ('display_label', models.CharField(max_length=256)),
                 ('db_version', models.BooleanField(default=True, verbose_name='Use DB version')),
                 ('displayable', models.BooleanField(default=True, verbose_name='Is displayed')),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='analysisdescription_created_by', related_query_name='analysisdescription_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='analysisdescription_modified_by', related_query_name='analysisdescription_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='analysisdescription_created_by', related_query_name='analysisdescription_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='analysisdescription_modified_by', related_query_name='analysisdescription_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'db_table': 'analysis_description',
@@ -60,8 +62,8 @@ class Migration(migrations.Migration):
                 ('code', models.CharField(max_length=20, unique=True)),
                 ('name', models.CharField(max_length=255)),
                 ('description', models.TextField(blank=True, null=True)),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribtype_created_by', related_query_name='masterattribtype_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribtype_modified_by', related_query_name='masterattribtype_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribtype_created_by', related_query_name='masterattribtype_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribtype_modified_by', related_query_name='masterattribtype_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'AttribType',
@@ -84,8 +86,8 @@ class Migration(migrations.Migration):
                 ('so_acc', models.CharField(blank=True, max_length=64, null=True)),
                 ('so_term', models.CharField(blank=True, max_length=1023, null=True)),
                 ('attrib_type', models.ForeignKey(blank=True, db_column='attrib_type_id', null=True, on_delete=django.db.models.deletion.SET_NULL, to='ensembl_production_db.MasterAttribType')),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterbiotype_created_by', related_query_name='masterbiotype_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterbiotype_modified_by', related_query_name='masterbiotype_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterbiotype_created_by', related_query_name='masterbiotype_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterbiotype_modified_by', related_query_name='masterbiotype_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Biotype',
@@ -108,8 +110,8 @@ class Migration(migrations.Migration):
                 ('secondary_db_name', models.CharField(blank=True, max_length=255, null=True)),
                 ('secondary_db_table', models.CharField(blank=True, max_length=255, null=True)),
                 ('description', models.TextField(blank=True, null=True)),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterexternaldb_created_by', related_query_name='masterexternaldb_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterexternaldb_modified_by', related_query_name='masterexternaldb_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterexternaldb_created_by', related_query_name='masterexternaldb_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterexternaldb_modified_by', related_query_name='masterexternaldb_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'ExternalDB',
@@ -127,8 +129,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('description', models.TextField()),
                 ('max_length', models.PositiveIntegerField()),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mastermiscset_created_by', related_query_name='mastermiscset_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mastermiscset_modified_by', related_query_name='mastermiscset_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mastermiscset_created_by', related_query_name='mastermiscset_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='mastermiscset_modified_by', related_query_name='mastermiscset_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'db_table': 'master_misc_set',
@@ -143,8 +145,8 @@ class Migration(migrations.Migration):
                 ('unmapped_reason_id', models.AutoField(primary_key=True, serialize=False)),
                 ('summary_description', models.CharField(blank=True, max_length=255, null=True)),
                 ('full_description', models.CharField(blank=True, max_length=255, null=True)),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterunmappedreason_created_by', related_query_name='masterunmappedreason_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterunmappedreason_modified_by', related_query_name='masterunmappedreason_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterunmappedreason_created_by', related_query_name='masterunmappedreason_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterunmappedreason_modified_by', related_query_name='masterunmappedreason_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'db_table': 'master_unmapped_reason',
@@ -161,8 +163,8 @@ class Migration(migrations.Migration):
                 ('is_optional', models.BooleanField(default=False)),
                 ('db_type', multiselectfield.db.fields.MultiSelectField(choices=[('cdna', 'cdna'), ('compara', 'compara'), ('core', 'core'), ('funcgen', 'funcgen'), ('otherfeatures', 'otherfeatures'), ('rnaseq', 'rnaseq'), ('variation', 'variation'), ('vega', 'vega'), ('presite', 'presite'), ('sangervega', 'sangervega')], max_length=80)),
                 ('description', models.TextField(blank=True, null=True)),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='metakey_created_by', related_query_name='metakey_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='metakey_modified_by', related_query_name='metakey_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='metakey_created_by', related_query_name='metakey_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='metakey_modified_by', related_query_name='metakey_updates', to=settings.AUTH_USER_MODEL)),
                 ('is_multi_value', models.BooleanField(default=False))
             ],
             options={
@@ -178,8 +180,8 @@ class Migration(migrations.Migration):
                 ('web_data', models.TextField(db_column='`data`', null=True)),
                 ('comment', models.TextField(blank=True, null=True)),
                 ('description', models.CharField(blank=True, max_length=255, null=True)),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='webdata_created_by', related_query_name='webdata_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='webdata_modified_by', related_query_name='webdata_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='webdata_created_by', related_query_name='webdata_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='webdata_modified_by', related_query_name='webdata_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'WebData',
@@ -194,8 +196,8 @@ class Migration(migrations.Migration):
                 ('is_current', models.BooleanField(default=True)),
                 ('attrib_set_id', models.IntegerField()),
                 ('attrib', models.OneToOneField(db_column='attrib_id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, related_name='related_attrib_set', serialize=False, to='ensembl_production_db.MasterAttrib')),
-                ('created_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribset_created_by', related_query_name='masterattribset_creates', to=settings.AUTH_USER_MODEL)),
-                ('modified_by', ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribset_modified_by', related_query_name='masterattribset_updates', to=settings.AUTH_USER_MODEL)),
+                ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribset_created_by', related_query_name='masterattribset_creates', to=settings.AUTH_USER_MODEL)),
+                ('modified_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattribset_modified_by', related_query_name='masterattribset_updates', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'AttribSet',
@@ -210,12 +212,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='masterattrib',
             name='created_by',
-            field=ensembl_production.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattrib_created_by', related_query_name='masterattrib_creates', to=settings.AUTH_USER_MODEL),
+            field=ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattrib_created_by', related_query_name='masterattrib_creates', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='masterattrib',
             name='modified_by',
-            field=ensembl_production.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattrib_modified_by', related_query_name='masterattrib_updates', to=settings.AUTH_USER_MODEL),
+            field=ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='modified_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='masterattrib_modified_by', related_query_name='masterattrib_updates', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='analysisdescription',

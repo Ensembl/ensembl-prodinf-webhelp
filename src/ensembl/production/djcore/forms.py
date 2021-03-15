@@ -10,11 +10,12 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 import json
+import re
 
 from django import forms
 from django.core.validators import RegexValidator, EmailValidator
 
-from ensembl_dbcopy.forms import COMMA_RE
+COMMA_RE = re.compile(',+')
 
 
 def escape_perl_string(v):

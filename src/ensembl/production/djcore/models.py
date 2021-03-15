@@ -14,9 +14,8 @@
 from django.contrib.auth import get_user_model
 from django.core import exceptions
 from django.db import models
+from django.db.models.base import router, NOT_PROVIDED
 from django.template.defaultfilters import truncatechars
-
-from ensembl_production.models import router, NOT_PROVIDED
 
 
 class NullTextField(models.TextField):
