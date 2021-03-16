@@ -12,12 +12,17 @@
 """
 Automated test - unittest
 """
+from django.test import TestCase
 
-def test_alive():
-    """
-    Test case to ensure that the testTool works.
-    .. code-block:: none
+class TestDjCore(TestCase):
 
-    """
-    print("I am alive")
-    assert True
+    def test_alive(self):
+        """
+        Test case to ensure that the testTool works.
+        .. code-block:: none
+
+        """
+        print("I am alive")
+        assert True
+
+    # TODO add more tests

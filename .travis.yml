@@ -12,7 +12,6 @@ before_script:
   - mysql -u root -e "CREATE USER 'ensembl'@'localhost' IDENTIFIED BY '';"
   - mysql -u root -e "GRANT ALL ON *.* TO 'ensembl'@'localhost';"
 install:
-  - pip install -r requirements.txt
   - pip install -r requirements-dev.txt
 script:
-  - coverage run --source='.' pytest ensembl.production.djcore.tests
+  - coverage run --source='./src/ensembl'  ./src/manage.py tests ensembl.production.djcore.tests
