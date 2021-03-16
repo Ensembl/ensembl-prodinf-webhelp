@@ -15,7 +15,7 @@
 import jsonfield
 from django.contrib.auth.models import Group
 from django.contrib.staticfiles import finders
-from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.templatetags.static import static
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.utils import ConnectionHandler, ConnectionRouter

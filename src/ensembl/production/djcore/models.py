@@ -126,4 +126,3 @@ class HasDescription:
     @property
     def short_description(self):
         return truncatechars(self.description, 150)
-
