@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('type', models.CharField(max_length=255)),
                 ('keyword', ensembl.production.djcore.fields.SizedTextField(blank=True, null=True)),
                 ('data', models.TextField()),
-                ('status', ensembl.production.djcore.fields.EnumField(choices=[('draft', 'Draft'), ('live', 'Live'), ('dead', 'Dead')], max_length=256)),
+                ('status', ensembl.production.djcore.fields.EnumField(choices=[('draft', 'Draft'), ('live', 'Live'), ('dead', 'Dead')])),
                 ('helpful', models.IntegerField(blank=True, null=True)),
                 ('not_helpful', models.IntegerField(blank=True, null=True)),
                 ('created_by', ensembl.production.djcore.models.SpanningForeignKey(blank=True, db_column='created_by', db_constraint=False, null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='helprecord_created_by', related_query_name='helprecord_creates', to=settings.AUTH_USER_MODEL)),
