@@ -1,23 +1,26 @@
-# ensembl-prodinf-djcore
+# ensembl-prodinf-webhelp
 
-This repository contains a set of useful core Django functionalities that may be extended in other pass included in current Ensembl Production Services portal - avoiding circular references for the most part.
+This repository contains Django admin Portable app to edit Ensembl Web Help content. 
 
 INSTALL
 =======
 
 1. clone the repo
    
-    git clone https://github.com/Ensembl/ensembl-prodinf-djcore
+    git clone https://github.com/Ensembl/ensembl-prodinf-webhelp
 
-2. cd ensembl-prodinf-djcore
+2. cd ensembl-prodinf-webhelp
    
-3. setup.py sdist 
-    ```
-    python3 -m venv .venv
-    source .venv/bin/activate
-    setup.py sdist
-    pip install sdist/[package_name].tar.gz
-    ```
+3. Install dependencies in you favorite virtual env
    
-    pip install -e https://github.com/Ensembl/ensembl-prodinf-djcore#egg=ensembl-prodinf-djcore
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Install and run test app
+
+   ```shell
+   ./src/manage.py migrate
+   ./src/manage.py runserver
+   ```
 
