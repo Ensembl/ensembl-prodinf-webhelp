@@ -104,7 +104,7 @@ class FaqForm(WebSiteRecordForm):
 class ViewForm(WebSiteRecordForm):
     content = forms.CharField(label="Content", widget=CKEditorWidget())
     help_link = forms.CharField(label="Linked URLs")
-    ensembl_action = forms.CharField(label="Ensembl Action", required=False)
+    ensembl_action = forms.CharField(label="Ensembl Action", required=False, help_text="Associated action")
     ensembl_object = forms.CharField(label="Ensembl Object", required=False)
     keyword = forms.CharField(widget=forms.Textarea({'rows': 3}))
 

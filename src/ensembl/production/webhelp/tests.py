@@ -11,4 +11,21 @@
 #   limitations under the License.
 from django.test import TestCase
 
-# Create your tests here.
+from ensembl.production.webhelp.models import *
+
+
+class HelpRecordTest(TestCase):
+
+    fixtures = ['webhelp']
+
+    def testRecordTypeProxies(self):
+        records = HelpRecord.objects.count()
+        self.assertEqual(records, 11)
+        movies = MovieRecord.objects.all()
+        self.assertEqual(len(movies), 2)
+        lookups = LookupRecord.objects.count()
+        self.assertEqual(lookups, 3)
+        views = ViewRecord.objects.count()
+        self.assertEqual(views, 3)
+        faqs = FaqRecord.objects.count()
+        self.assertEqual(faqs, 3)

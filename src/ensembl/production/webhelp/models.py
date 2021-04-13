@@ -14,12 +14,6 @@ from django.db import models
 from ensembl.production.djcore.fields import EnumField, SizedTextField
 from ensembl.production.djcore.models import BaseTimestampedModel
 
-"""
-faq
-view
-lookup
-movie
-"""
 DIVISION_CHOICES = [
     # (None, '----'),
     ('bacteria', 'Bacteria'),
@@ -32,10 +26,21 @@ DIVISION_CHOICES = [
 ]
 
 
+class HelpRecordManager(models.Manager):
+
+    def get_queryset(self):
+        if not self.model._force_type:
+            # Default to keep behavior for "get All HelpRecords"
+            return super().get_queryset()
+        return super().get_queryset().filter(type=self.model._force_type)
+
+
 class HelpRecord(BaseTimestampedModel):
     class Meta:
         db_table = 'help_record'
         app_label = 'ensembl_website'
+
+    objects = HelpRecordManager()
 
     _force_type = ''
     help_record_id = models.AutoField(primary_key=True)

@@ -81,13 +81,6 @@ class MovieItemAdmin(HelpRecordModelAdmin):
               ('modified_by', 'modified_at'))
     search_fields = ('data', 'keyword', 'status', 'help_record_id')
 
-    def get_queryset(self, request):
-        q = MovieRecord.objects.filter(type='movie')
-        ordering = self.get_ordering(request)
-        if ordering:
-            q = q.order_by(*ordering)
-        return q
-
     def title(self, obj):
         if obj:
             raw_data = json.loads(obj.data)
@@ -126,13 +119,6 @@ class FaqItemAdmin(HelpRecordModelAdmin):
               ('modified_by', 'modified_at'))
     search_fields = ('data', 'keyword', 'status')
 
-    def get_queryset(self, request):
-        q = FaqRecord.objects.filter(type='faq')
-        ordering = self.get_ordering(request)
-        if ordering:
-            q = q.order_by(*ordering)
-        return q
-
     def category(self, obj):
         if obj:
             raw_data = json.loads(obj.data)
@@ -161,13 +147,6 @@ class ViewItemAdmin(HelpRecordModelAdmin):
               ('created_by', 'created_at'),
               ('modified_by', 'modified_at'))
     search_fields = ('data', 'keyword', 'status', 'helplink__page_url')
-
-    def get_queryset(self, request):
-        q = ViewRecord.objects.filter(type='view')
-        ordering = self.get_ordering(request)
-        if ordering:
-            q = q.order_by(*ordering)
-        return q
 
     def ensembl_action(self, obj):
         if obj:
@@ -207,13 +186,6 @@ class LookupItemAdmin(HelpRecordModelAdmin):
               ('created_by', 'created_at'),
               ('modified_by', 'modified_at'))
     search_fields = ('data', 'keyword', 'status')
-
-    def get_queryset(self, request):
-        q = LookupRecord.objects.filter(type='lookup')
-        ordering = self.get_ordering(request)
-        if ordering:
-            q = q.order_by(*ordering)
-        return q
 
     def word(self, obj):
         if obj:

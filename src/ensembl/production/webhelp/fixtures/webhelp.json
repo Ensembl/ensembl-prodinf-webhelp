@@ -1,0 +1,254 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Vertebrates",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 8,
+    "fields": {
+      "name": "Production",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$Lv1h0YuCzznU$j3Z/jpv84BdjQuH+UZvFrHBx+2uC2mkb4DutcGlEDcs=",
+      "last_login": "2019-06-20T15:30:33.998Z",
+      "is_superuser": true,
+      "username": "testuser",
+      "first_name": "",
+      "last_name": "",
+      "email": "testuser@ebi.ac.uk",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-03-26T11:23:02.067Z",
+      "groups": [8],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$NEVUH96SuBQv$UpCW2v4S0R6j6+LBvD5AAO3tkAWNynezgd0DF+lXmbI=",
+      "last_login": "2019-06-20T15:30:33.998Z",
+      "is_superuser": true,
+      "username": "testuser2",
+      "first_name": "",
+      "last_name": "",
+      "email": "testuser2@ebi.ac.uk",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-03-26T11:23:02.067Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 125,
+    "fields": {
+      "created_by": 2,
+      "created_at": "2008-07-28T11:24:09Z",
+      "modified_by": 104467,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "faq",
+      "keyword": "FAQ, BioMart, HGNC, convert, ID, probes, EntrezGene, data mining",
+      "data": "{\"question\": \"<p>How do I <strong>convert IDs</strong>?   I have ENSG... IDs and I would like HGNC symbols and EntrezGene IDs along with matching Affymetrix platform HC G110 probes.</p>\", \"answer\": \"<p>This can be done using <a href=\\\"/biomart/martview\\\">BioMart</a>.  We outline the protocol using Ensembl genes ENSG00000162367 and ENSG00000187048. We will enter in the list of genes and export IDs from multiple databases. <br /> <br /> <strong>Database:</strong> Ensembl genes <strong>Dataset:</strong> <em>Homo sapiens</em> genes <strong>Filters:</strong> GENE: ID list limit box: select as the header <em>Ensembl Gene ID(s)</em> and enter gene names.<strong>Attributes:</strong> EXTERNAL:External References, select <em>HGNC symbol</em> and <em>EntrezGene ID</em>.  Scroll down to EXTERNAL: Microarray Attributes to select <em>Affy HC G110</em>. <br /> <br /> <strong>Click Results</strong> at the top.</p>\\r\\n<p>For BioMart tutorials, see our video&nbsp;on <a href=\\\"http://youtu.be/DXPaBdPM2vs\\\">YouTube</a> or <a href=\\\"http://v.youku.com/v_show/id_XMjQ2MjkwMTg0.html\\\">YouKu</a>&nbsp;.</p>\", \"category\": \"data\"}",
+      "status": "live",
+      "helpful": 7,
+      "not_helpful": 2
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 126,
+    "fields": {
+      "created_by": 2,
+      "created_at": "2008-07-28T15:41:12Z",
+      "modified_by": 106005,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "faq",
+      "keyword": "FAQ, archive, ID, Ensembl ID, old, version, ID history converter, previous, release, current, update",
+      "data": "{\"question\": \"<p>I have a list of old Ensembl IDs from a previous release.  How can I find their IDs in the current version?</p>\", \"answer\": \"<p>The gene IDs might be the same in the current version.  Search for the gene ID in the browser, or in <a href=\\\"/biomart/martview\\\">BioMart</a>.  A gene ID can change if the gene structure changes dramatically, for example if a gene is split into two, or alternatively, two genes are merged into one.</p>\\r\\n<p>If you have a list of IDs, submit them to our <a href=\\\"http://www.ensembl.org/Homo_sapiens/Tools/IDMapper?db=core\\\">ID History converter</a>. Click on the 'Tools' link at the top of most Ensembl pages, and follow the link to the converter.</p>\\r\\n<p>Or, view our older, <a href=\\\"/info/website/archives/index.html\\\">archive sites</a>.</p>\", \"category\": \"archives\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 127,
+    "fields": {
+      "created_by": 2,
+      "created_at": "2008-07-28T15:46:09Z",
+      "modified_by": null,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "faq",
+      "keyword": "",
+      "data": "{\"question\": \"I am looking for a clone that contains my gene or region of interest\", \"answer\": \"The \\\"Region in Detail\\\" view displays clones along the chromosome, along with genes. Turn on clones from various clonesets in the Control Panel.  Look for more information by clicking on a clone in the display.  Note: Ensembl does not sell clones, only displays positional information.\", \"category\": \"z_data\"}",
+      "status": "dead",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 135,
+    "fields": {
+      "created_by": 5655,
+      "created_at": "2008-08-13T10:23:09Z",
+      "modified_by": 120522,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "view",
+      "keyword": "ortholog, orthologue, homolog, homologue, species, orthologs, orthologues, homologs, homologues, homology, orthology",
+      "data": "{\"ensembl_object\": \"Gene\", \"content\": \"<h1>Orthologues View</h1>\\r\\n<p><a href=\\\"/Homo_sapiens/Gene/Compara_Ortholog?g=ENSG00000112299;r=6:133002729-133035188;t=ENST00000367928\\\">Example page</a></p>\\r\\n<p>Orthologues inferred from <a class=\\\"cp-internal\\\" href=\\\"/Help/View?id=137\\\">gene trees</a> are determined using all species in that particular database, i.e. all the (mostly) chordates in Ensembl, all the fungi in Ensembl Fungi, all the plants in Ensembl plants, all the metazoa in Ensembl Metazoa, all the protists in Ensembl Protists, or all the species in the Pan-Compara set for Pan-Compara orthologues in Ensembl Genomes.  A detailed description of the method is provided <a class=\\\"cp-external\\\" href=\\\"/info/genome/compara/homology_method.html\\\">here</a>.</p>\\r\\n<p>Unaligned sequences (nucleotide and/or amino acids) of orthologous genes can be exported in FASTA format by clicking on <strong>Sequence export</strong>.&nbsp;The <a href=\\\"http://www.ensembl.org/info/docs/api/compara/compara_tutorial.html\\\">Compara API</a> and <a href=\\\"http://youtu.be/DXPaBdPM2vs\\\">BioMart</a> can also be used to export orthologues.</p>\\r\\n<h2>Top table</h2>\\r\\n<p>Species are grouped by clades in the top table, such as Primate, Rodents, and Fish.  By default, the full list of orthologues is shown below the table.  Click on <em>Show details</em> to display only the orthologues for species in one clade.</p>\\r\\n<p>The number of species for each orthologue type is shown in the top table.  Orthologue types are assigned by comparing two species, and are as follows:</p>\\r\\n<ul>\\r\\n<li> <strong>1-to-1 orthologues</strong>: only one copy is found in each species </li>\\r\\n<li> <strong>1-to-many orthologues</strong>: one gene in one species is orthologous to multiple genes in another species </li>\\r\\n<li> <strong>Many-to-many orthologues</strong>: multiple orthologues are found in both species </li>\\r\\n</ul>\\r\\n<p><strong>Orthologues</strong> are defined in Ensembl as genes for which the most common ancestor node is a speciation event. These ancestral speciation events are represented by blue nodes in the gene trees.</p>\\r\\n<p>Possible orthologues are homologues between species where the common ancestor is a weakly supported duplication event. Although they should be called paralogues according to the Compara rules, the low confidence on the duplication node might suggest an error in the phylogenetic reconstruction. We list these cases here as they might be real orthologues, especially in cases where no better orthologue is found.</p>\\r\\n<h2>List of selected orthologues</h2>\\r\\n<p>The list of orthologues underneath the top table shows the species, the orthologue type, the dN/dS value (if calculated), the Ensembl gene ID and name, links to other views, the <a href=\\\"http://www.ensembl.org/Help/Glossary?id=204\\\">Target %ID</a> and the <a href=\\\"http://www.ensembl.org/Help/Glossary?id=205\\\">Query %ID</a>, the Gene Order Conservation (GOC) score, the Whole Genome Alignment (WGA) coverage, and an indication of confidence of orthology.</p>\\r\\n<p>If you are searching for a gene in human, for example, and looking for its homologue in another species such as mouse, the Query %ID refers to the percentage of the query sequence (human) that matches to the homologue (the mouse protein). Target %ID refers to the percentage of the target sequence (mouse) that matches to the query sequence (human).</p>\\r\\n<div>Protein and cDNA alignments can be found using links in the Compare column.  Links are also provided to a graphical display of the alignment (Region Comparison view), and the gene tree.</div>\\r\\n<p>IDs, orthology types, and dn/ds values can also be obtained using the <a class=\\\"cp-external\\\" href=\\\"/info/data/api/\\\">compara API</a> or with <a rel=\\\"external\\\" href=\\\"http://www.biomart.org/biomart/mview/help.html\\\">BioMart</a>.</p>\", \"ensembl_action\": \"Compara_Ortholog\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 136,
+    "fields": {
+      "created_by": 5655,
+      "created_at": "2008-08-13T10:26:33Z",
+      "modified_by": 99923,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "view",
+      "keyword": "paralog, paralogue, homolog, homologue, paralogs, paralogues, homologs, homologues, paralogy, homology, duplicate, copy",
+      "data": "{\"ensembl_object\": \"Gene\", \"content\": \"<h1>Paralogues View</h1>\\r\\n<p><a href=\\\"../../Homo_sapiens/Gene/Compara_Paralog?g=ENSG00000112299;r=6:133002729-133035188;t=ENST00000367928\\\">Example page</a></p>\\r\\n<p>Homologues are inferred from the  <a class=\\\"cp-internal\\\" href=\\\"../../Help/View?id=137\\\">gene trees</a>, which are determined using all species in Ensembl.  A detailed description of the method is provided <a class=\\\"cp-external\\\" href=\\\"../../info/docs/compara/homology_method.html\\\">here</a>.</p>\\r\\n<p>Paralogues are defined in Ensembl as genes for which the most common ancestor node is a duplication event. These ancestral duplications are represented by red nodes in the gene trees.</p>\\r\\n<p>The table shows the taxonomic level of the ancestor duplication node, the Ensembl gene ID and name, the location of the paralogue, and the percent of identical amino acids in the paralogue compared with the gene of interest (Target %ID). The identity of the gene of interest when compared with the paralogue is the query %ID.</p>\\r\\n<p>For alignments of the paralogues, use the links in the <strong>Compare</strong> column.</p>\\r\\n<p>Unaligned sequences (nucleotide and/or amino acids) of paralogs can be exported in FASTA format by clicking on&nbsp;<strong>Sequence export</strong>. The <a href=\\\"http://www.ensembl.org/info/docs/api/compara/compara_tutorial.html\\\">Compara API</a> and <a href=\\\"http://youtu.be/DXPaBdPM2vs\\\">BioMart</a> can also be used to export paralogues.</p>\", \"ensembl_action\": \"Compara_Paralog\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 137,
+    "fields": {
+      "created_by": 5655,
+      "created_at": "2008-08-13T10:32:27Z",
+      "modified_by": 122937,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "view",
+      "keyword": "comparative genomics, homology, homolog, paralog, ortholog, species, phylogenetic, protein, paralogy, orthology, homologue, orthologue, paralogue, gene, phylogeny, taxonomy, tree",
+      "data": "{\"ensembl_object\": \"Gene\", \"content\": \"<h1>Gene/Protein Tree</h1>\\r\\n<p><a href=\\\"/Homo_sapiens/Gene/Compara_Tree?g=ENSG00000112299;r=6:133002729-133035188;t=ENST00000367928\\\">Example page</a></p>\\r\\n<p>Ensembl gene trees are generated by the <a class=\\\"cp-external\\\" href=\\\"/info/genome/compara/homology_method.html\\\">Gene Orthology/Paralogy prediction method</a> pipeline.  All homologues in Ensembl are determined from gene trees.</p>\\r\\n<p>Gene trees are constructed using one representative protein for every gene in every species in Ensembl. &nbsp;The longest translation annotated by the <a href=\\\"/info/genome/genebuild/ccds.html\\\" target=\\\"_blank\\\">CCDS</a> project is used, if any are available, or the longest protein-coding translation otherwise. &nbsp;(The trees can also be considered as protein trees).</p>\\r\\n<p>The display shows the maximum likelihood phylogenetic tree representing the evolutionary history of genes.  These trees are reconciled with a species tree, generated by <a rel=\\\"external\\\" href=\\\"http://treesoft.sourceforge.net/treebest.shtml\\\">TreeBeST</a>. Internal nodes are then annotated for duplication (red boxes) or speciation (blue boxes) events.</p>\\r\\n<p>[[IMAGE::genetree.png]]</p>\\r\\n<p>Red squares represent duplications nodes, blue squares represent speciation nodes, giving rise to paralogues and orthologues.  Another class of node, ambiguous, is shown as a lighter blue square.</p>\\r\\n<p>The gene of interest is highlighted in red and within-species paralogues are shown in blue, if the option to view paralogues is selected (below the tree diagram).</p>\\r\\n<p>Taxonomy IDs refer to the <a rel=\\\"external\\\" href=\\\"http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/\\\">NCBI Taxonomy Browser</a>. The number at the top of pop-up menus (upon clicking on a node) corresponds to the node_id from the protein_tree_node table in the <a class=\\\"cp-external\\\" href=\\\"/info/docs/api/compara/\\\">compara database</a>.</p>\\r\\n<p>Multiple alignment of the peptides (green bars) was made using <a rel=\\\"external\\\" href=\\\"http://nar.oxfordjournals.org/cgi/content/full/32/5/1792\\\">MUSCLE</a>. Green bars shows areas of amino acid alignment, white areas are gaps in the alignment.  Dark green bars indicate consensus alignments.</p>\\r\\n<p>Click on a node to expand a collapsed set of branches into a full tree.  The consensus amino acid alignment corresponds to the consensus residues in the collapsed node, and will be expanded when the tree is expanded.</p>\\r\\n<p>You can also view a detailed sequence alignment in&nbsp;<a href=\\\"http://wasabiapp.org\\\">Wasabi</a>&nbsp;by clicking on a node.</p>\\r\\n<p>You can also use the collapse and expand links at the bottom as follows:</p>\\r\\n<p><strong>View current gene only: </strong>Shows the default view of the gene tree, where the selected gene and the node it is within is expanded fully, while all other nodes are collapsed.</p>\\r\\n<p><strong>View paralogs of current gene: </strong>Shows the current gene and all its paralogues with their nodes expanded fully, while all other nodes are collapsed.</p>\\r\\n<p><strong>View all duplication nodes: </strong>Expands all the red duplication nodes and all of the nodes they fall within, while speciation nodes remain collapsed.</p>\\r\\n<p><strong>View fully expanded tree: </strong>Expands all nodes.</p>\\r\\n<p><strong>Collapse all the nodes at the taxonomic rank: </strong>Choose your preferred taxonomic rank from the drop down to see all nodes expanded above that rank, and collapsed below it.</p>\\r\\n<p><strong>Configure this page</strong> to customise the tree.  Colouring by clade can be removed.</p>\\r\\n<p>Gene trees can be exported as EMF (Ensembl Multi Format) files from the Ensembl <a class=\\\"cp-external\\\" href=\\\"ftp://ftp.ensembl.org/pub/current_emf/ensembl-compara\\\">ftp site</a>.</p>\", \"ensembl_action\": \"Compara_Tree\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 493,
+    "fields": {
+      "created_by": null,
+      "created_at": null,
+      "modified_by": 2,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "lookup",
+      "keyword": null,
+      "data": "{\"expanded\": \"APPRIS - A system for annotating alternative splice isoforms\", \"word\": \"APPRIS\", \"meaning\": \"<p><a class=\\\"popup\\\" href=\\\"/Homo_sapiens/Help/Glossary?id=521\\\">APPRIS</a> is a system to annotate alternatively spliced transcripts based on a range of computational methods.</p>\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 494,
+    "fields": {
+      "created_by": null,
+      "created_at": null,
+      "modified_by": null,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "lookup",
+      "keyword": null,
+      "data": "{\"expanded\": \"\", \"word\": \"TSL:1\", \"meaning\": \"<p>Transcript Support Level 1, when transcripts are supported by at least one non-suspect mRNA.</p>\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 495,
+    "fields": {
+      "created_by": null,
+      "created_at": null,
+      "modified_by": null,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "lookup",
+      "keyword": null,
+      "data": "{\"expanded\": \"\", \"word\": \"TSL:2\", \"meaning\": \"<p>Transcript Support Level 2, when transcripts are supported by multiple ESTs or by an mRNA flagged as&nbsp;suspect.</p>\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 556,
+    "fields": {
+      "created_by": 106005,
+      "created_at": "2015-10-30T14:38:31Z",
+      "modified_by": null,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "movie",
+      "keyword": null,
+      "data": "{\"list_position\": \"\", \"youtube_id\": \"wsItrTTQU_k\", \"title\": \"LRG introduction\", \"youku_id\": \"\", \"length\": \"30:43\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helprecord",
+    "pk": 189,
+    "fields": {
+      "created_by": 2,
+      "created_at": "2008-12-04T14:52:55Z",
+      "modified_by": 120463,
+      "modified_at": "2019-09-19T13:26:02Z",
+      "type": "movie",
+      "keyword": "tutorial, video, BioMart, data mining, export, gene, information, sequence, variation",
+      "data": "{\"list_position\": 18, \"youtube_id\": \"QvGT2G0-hYA\", \"title\": \"Introduction to BioMart\", \"youku_id\": \"XMTUwNDIyNTMwNA\", \"length\": \"4.27\"}",
+      "status": "live",
+      "helpful": 0,
+      "not_helpful": 0
+    }
+  },
+  {
+    "model": "ensembl_website.helplink",
+    "pk": 2,
+    "fields": {
+      "page_url": "Gene/Compara_Ortholog",
+      "help_record": 135
+    }
+  },
+  {
+    "model": "ensembl_website.helplink",
+    "pk": 3,
+    "fields": {
+      "page_url": "Gene/Compara_Paralog",
+      "help_record": 136
+    }
+  },
+  {
+    "model": "ensembl_website.helplink",
+    "pk": 4,
+    "fields": {
+      "page_url": "Gene/Compara_Tree",
+      "help_record": 137
+    }
+  }
+]

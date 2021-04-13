@@ -6,6 +6,7 @@ python:
   - "3.8"
 env:
   - DEBUG=f
+  - DB=sqlite
 install:
   - pip install -r requirements-dev.txt
 script:
