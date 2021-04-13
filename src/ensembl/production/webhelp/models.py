@@ -10,9 +10,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 from django.db import models
-from ensembl.production.djcore.fields import EnumField, SizedTextField
-from django import forms
 
+from ensembl.production.djcore.fields import EnumField, SizedTextField
 from ensembl.production.djcore.models import BaseTimestampedModel
 
 """
@@ -22,7 +21,7 @@ lookup
 movie
 """
 DIVISION_CHOICES = [
-    #(None, '----'),
+    # (None, '----'),
     ('bacteria', 'Bacteria'),
     ('fungi', 'Fungi'),
     ('metazoa', 'Metazoa'),

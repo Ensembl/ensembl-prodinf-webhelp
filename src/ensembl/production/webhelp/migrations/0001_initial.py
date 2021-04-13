@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('modified_at', models.DateTimeField(auto_now=True, null=True, verbose_name='Last Update')),
                 ('help_record_id', models.AutoField(primary_key=True, serialize=False)),
                 ('type', models.CharField(max_length=255)),
-                ('keyword', ensembl.production.djcore.fields.SizedTextField(blank=True, null=True)),
+                ('keyword', ensembl.production.djcore.fields.SizedTextField(blank=True, null=True, size_class=1)),
                 ('data', models.TextField()),
                 ('status', ensembl.production.djcore.fields.EnumField(choices=[('draft', 'Draft'), ('live', 'Live'), ('dead', 'Dead')])),
                 ('helpful', models.IntegerField(blank=True, null=True)),
@@ -87,7 +87,7 @@ class Migration(migrations.Migration):
             name='HelpLink',
             fields=[
                 ('help_link_id', models.AutoField(primary_key=True, serialize=False)),
-                ('page_url', ensembl.production.djcore.fields.SizedTextField(null=True)),
+                ('page_url', ensembl.production.djcore.fields.SizedTextField(null=True, size_class=1)),
                 ('help_record', models.OneToOneField(blank=True, db_column='help_record_id', null=True, on_delete=django.db.models.deletion.CASCADE, to='ensembl_website.viewrecord')),
             ],
             options={
