@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% load i18n admin_urls %}
+
+{% block extrahead %}
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.ie7.css"/><![endif]--><!--[if gt IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><![endif]--><!--[if !IE]><!--><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><!--<![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.ie7.css"/><![endif]--><!--[if gt IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><![endif]--><!--[if !IE]><!--><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><!--<![endif]-->
+{% endblock %}
+
+{% block usertools %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block nav-sidebar %}{% endblock %}
+{% block content %}
+    {{ displayed | safe }}
+{% endblock %}

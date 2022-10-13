@@ -29,5 +29,5 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path(f'', admin.site.urls),
+    path(f'', admin.site.urls)
 ]

@@ -18,6 +18,7 @@ from ensembl.production.djcore.admin import ProductionUserAdminMixin
 
 from ensembl.production.webhelp.forms import WebSiteRecordForm, LookupItemForm, MovieForm, FaqForm, ViewForm
 from ensembl.production.webhelp.models import *
+from ensembl.production.webhelp.views import *
 
 
 class HelpLinkInline(admin.TabularInline):
@@ -42,6 +43,9 @@ class HelpLinkModelAdmin(admin.ModelAdmin):
         return request.user.is_staff
 
 
+from django.urls import path
+
+
 class HelpRecordModelAdmin(ProductionUserAdminMixin):
     list_per_page = 50
     readonly_fields = (
@@ -62,6 +66,23 @@ class HelpRecordModelAdmin(ProductionUserAdminMixin):
 
     def has_change_permission(self, request, obj=None):
         return request.user.is_staff
+
+    def get_urls(self):
+        urls = super().get_urls()
+        info = self.model._meta.app_label, self.model._meta.model_name
+        object_map = {
+            'movierecord': MovieItemPreview,
+            'faqrecord': FaqItemPreview,
+            'viewrecord': ViewItemPreview,
+            'lookuprecord': LookupItemPreview
+        }
+        ext_urls = [
+            path(r'<path:object_id>/preview/',
+                 self.admin_site.admin_view(getattr(object_map[self.model._meta.model_name], 'as_view')()),
+                 {'model_admin': self, },
+                 name='%s_%s_preview' % info)
+        ]
+        return ext_urls + urls
 
 
 @admin.register(HelpLink)
