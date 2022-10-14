@@ -1,6 +1,10 @@
 CHANGELOG - Ensembl Prodinf Website Help 
 ======================================== 
 
+v1.1.1
+------
+- Introduce a "preview" button for help pages displayed in popup window.
+
 v1.0.0
 ------
 - Moved from initial production services monolithic application (https://github.com/Ensembl/ensembl-production-services)
