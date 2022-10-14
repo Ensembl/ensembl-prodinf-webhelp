@@ -2,12 +2,38 @@
 {% load i18n admin_urls %}
 
 {% block extrahead %}
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.ie7.css"/><![endif]--><!--[if gt IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><![endif]--><!--[if !IE]><!--><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><!--<![endif]--><!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.ie7.css"/><![endif]--><!--[if gt IE 7]><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><![endif]--><!--[if !IE]><!--><link rel="stylesheet" type="text/css" media="all" href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><!--<![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.ie7.css"/><![endif]--><!--[if gt IE 7]>
+<link rel="stylesheet" type="text/css" media="all"
+      href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><![endif]--><!--[if !IE]><!-->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="//static.ensembl.org/minified/a123b5965f101627e0725e19005ccfed.css"/><!--<![endif]--><!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" media="all"
+      href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.ie7.css"/><![endif]--><!--[if gt IE 7]>
+<link rel="stylesheet" type="text/css" media="all"
+      href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><![endif]--><!--[if !IE]><!-->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="//static.ensembl.org/minified/f68c9071a0b7e85cbc68c61208a2bdf1.image.css"/><!--<![endif]-->
 {% endblock %}
 
 {% block usertools %}{% endblock %}
 {% block breadcrumbs %}{% endblock %}
 {% block nav-sidebar %}{% endblock %}
 {% block content %}
-    {{ displayed | safe }}
+    <div id="min_width_holder">
+        <div id="masthead" class="">
+            <input type="hidden" class="panel_type" value="Masthead">
+            <div class="logo_holder"><a href="/">
+                <div class="logo-header print_hide" title="Ensembl Home">&nbsp;</div>
+            </a><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                     class="autosprite-src-default-png screen_hide_inline"
+                     style="background-position: -7.4px -325.125px;background-size: 1233.33333333333px 879.75px;height: 45px;width: 185px"
+                     alt="Ensembl Home" title="Ensembl Home"></div>
+        </div>
+        <div id="main_holder">
+            {{ displayed | safe }}
+        </div>
+    </div>
 {% endblock %}
+
