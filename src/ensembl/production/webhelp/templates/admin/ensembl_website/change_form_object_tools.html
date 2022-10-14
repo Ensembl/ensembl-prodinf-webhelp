@@ -9,7 +9,7 @@
                 {% url 'admin:ensembl_website_'|add:class_lower|add:'_preview' original.pk|admin_urlquote as preview_url %}
                 <a href="#"
                    onclick="window.open('{% add_preserved_filters preview_url %}', '_blank',
-                           'toolbar=no,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400')"
+                           'popup=yes,toolbar=no,scrollbars=yes,resizable=yes,top=50,left=50,width=800,height=1024')"
                    class="historylink">Preview</a>
             </li>
         {% endif %}
