@@ -9,6 +9,7 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
+import os
 from pathlib import Path
 
 from setuptools import setup, find_namespace_packages
@@ -27,7 +28,7 @@ def import_requirements():
 
 setup(
     name='ensembl-prodinf-webhelp',
-    version=version,
+    version=os.getenv('CI_COMMIT_TAG', version),
     namespace_packages=['ensembl'],
     packages=find_namespace_packages(where='src', include=['ensembl.production.*']),
     package_dir={'': 'src'},
@@ -45,10 +46,11 @@ setup(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Environment :: Console',
-        'License :: OSI Approved :: APACHE 2.0 License',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Utilities',
         'Topic :: System :: Distributed Computing',
         'Operating System :: POSIX',

@@ -1,5 +1,8 @@
 CHANGELOG - Ensembl Prodinf Website Help 
 ======================================== 
+v1.1.4
+------
+- Use dj-core from pip for version range. 
 
 v1.1.1
 ------
